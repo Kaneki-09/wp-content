@@ -1,0 +1,102 @@
+/*
+Theme Name: my_theme
+Theme URI:
+Author: Sushil
+Author URI:
+Description: My own theme
+Requires at least: 6.8
+Tested up to: 6.8
+Requires PHP: 5.7
+Version:
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: my_theme
+Tags:
+*/
+
+.wp-block-media-text {
+    overflow: visible;
+}
+
+.wp-block-media-text.is-style-balloon .wp-block-media-text__content {
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+    font-weight: bold;
+    color: #fff;
+    background: #333;
+    padding: 15px 25px;
+    border-radius: 20px;
+}
+
+.wp-block-media-text.is-style-balloon:not(.has-media-on-the-right) .wp-block-media-text__content::before {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: #333;
+    left: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    clip-path: polygon(0 50%, 100% 0, 100% 100%);
+}
+
+.wp-block-media-text.is-style-balloon.has-media-on-the-right .wp-block-media-text__content::before {
+    content: "";
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 12px solid #333;
+}
+
+/* Table */
+.wp-block-table .has-fixed-layout tr:nth-child(odd) {
+    background: #e0dddd;
+}
+
+.wp-block-accordion-heading{
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+}
+
+/* モバイル縦表示のときの先端（上向き） */
+@media (max-width: 600px) {
+  /* is-stacked-on-mobile クラスがある場合（モバイル縦表示オプションON） */
+    .wp-block-media-text.is-style-balloon.is-stacked-on-mobile .wp-block-media-text__content {
+            display: inline-block;
+            position: relative;
+            margin: 14px auto;
+            width:75%;
+        }
+
+        .wp-block-media-text.is-style-balloon.is-stacked-on-mobile .wp-block-media-text__content::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: -20px;
+            transform: translateX(-50%) rotate(90deg);
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 25px solid #333;
+            z-index: 1;
+        }
+
+        .wp-block-media-text.is-style-balloon.is-stacked-on-mobile .wp-block-media-text__content::after {
+            display: none;
+        }
+}
+
+@keyframes zoomIn {
+    to {
+        transform: scale(1);
+    }
+}

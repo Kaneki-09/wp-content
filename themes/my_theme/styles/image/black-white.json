@@ -1,0 +1,12 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/theme.json",
+    "version": 3,
+    "title": "白黒",
+    "slug": "black-white",
+    "blockTypes": [ "core/image" ],
+    "styles": {
+        "css": "filter: grayscale(50%);"
+    },
+    "_comment": "白黒するスタイル"
+
+}

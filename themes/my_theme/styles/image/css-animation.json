@@ -1,0 +1,11 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "title": "cssアニメーション",
+  "slug": "css-animation",
+  "blockTypes": [ "core/image" ],
+  "styles": {
+    "css": "transform: scale(0.5); animation: zoomIn 2s forwards;"
+  },
+  "_comment": "インラインで書ききれない部分はstyle.css,editor-style.cssに記述する"
+}

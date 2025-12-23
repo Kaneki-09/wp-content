@@ -1,0 +1,80 @@
+.wp-block-media-text { overflow: visible } .wp-block-media-text.is-style-balloon .wp-block-media-text__content {
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+    font-weight: bold;
+    color: #fff;
+    background: #333;
+    padding: 20px 22px;
+    border-radius: 20px;
+}
+
+.wp-block-media-text.is-style-balloon:not(.has-media-on-the-right) .wp-block-media-text__content::before {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: #333;
+    left: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    clip-path: polygon(0 50%, 100% 0, 100% 100%);
+    margin: auto;
+}
+
+.wp-block-media-text.is-style-balloon.has-media-on-the-right .wp-block-media-text__content::after {
+    content: "";
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 12px solid #333;
+}
+
+/* Table */
+.wp-block-table .has-fixed-layout tr:nth-child(odd) {
+    background: #e0dddd;
+}
+
+.wp-block-accordion-item span{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+/* モバイル縦表示のときの先端（上向き） */
+@media (max-width: 600px) {
+    /* is-stacked-on-mobile クラスがある場合（モバイル縦表示オプションON） */
+    .wp-block-media-text.is-style-balloon.is-stacked-on-mobile .wp-block-media-text__content {
+            display: inline-block;
+            position: relative;
+            margin-top: 14px;
+        }
+
+    .wp-block-media-text.is-style-balloon.is-stacked-on-mobile .wp-block-media-text__content::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: -20px;
+        transform: translateX(-50%) rotate(90deg);
+        width: 0;
+        height: 0;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 25px solid #333;
+        z-index: 1;
+    }
+
+    .wp-block-media-text.is-style-balloon.is-stacked-on-mobile .wp-block-media-text__content::after {
+        display: none;
+    }
+}
+
+@keyframes zoomIn {
+    to {
+        transform: scale(1);
+    }
+}

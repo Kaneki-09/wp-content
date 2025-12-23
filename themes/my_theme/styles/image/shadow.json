@@ -1,0 +1,15 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "title": "角丸+影付き",
+  "slug": "shadow",
+  "blockTypes": [ "core/image" ],
+  "styles": {
+    "shadow": "darkgrey 10px 10px",
+    "border": {
+      "radius": "20%"
+    },
+    "css": "transform: scale(0.5); animation: zoomIn 2s forwards;"
+  },
+  "_comment": "PHPで実行する方法もある。functions.php参照"
+}
