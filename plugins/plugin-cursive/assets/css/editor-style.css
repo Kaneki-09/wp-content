@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'CustomFont';
+    src: url('./assets/fonts/PabasingSignature-q2x3d.otf');
+    font-weight: 500;
+    font-style: normal;
+}
+
+span.cursive {
+    font-family: 'Customfont', cursive;
+    font-size: 25px;
+}
